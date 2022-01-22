@@ -14,3 +14,7 @@ def create_price(db: Session, price: schemas.FetchPrice):
     db.commit()
     db.refresh(db_price)
     return db_price
+
+
+def read_price(db: Session, price_id: int):
+    return db.query(models.Price).filter(models.Price.id == price_id).first()
