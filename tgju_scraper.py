@@ -17,24 +17,24 @@ class Tgju:
         self.fetch_time = time.time()
         for i, _ in enumerate(self.prices):
             last_price = self.prices.pop()
-            self.prices.insert(i, int(float(last_price.replace(",", ""))))
+            self.prices.insert(i, float(last_price.replace(",", "")))
 
     def get_gold_18(self):
-        return self.prices[3]
+        return self.prices[5]
 
     def get_gold_coin(self):
         return self.prices[4]
 
     def get_tether(self):
-        return self.prices[7]
+        return self.prices[1]
 
     def get_bitcoin(self):
-        return self.prices[8]
+        return self.prices[0]
 
     def get_all(self):
         prices_dict = {}
-        prices_dict["gold_18"] = self.prices[3]
+        prices_dict["gold_18"] = self.prices[5]
         prices_dict["gold_coin"] = self.prices[4]
-        prices_dict["tether"] = self.prices[7]
-        prices_dict["bitcoin"] = self.prices[8]
+        prices_dict["tether"] = self.prices[1]
+        prices_dict["bitcoin"] = self.prices[0]
         return prices_dict
